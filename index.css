@@ -1,0 +1,92 @@
+ body {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+     font-family: Arial, sans-serif;
+ }
+
+ .table-container {
+     margin: 20px;
+ }
+
+ .table {
+     width: 100%;
+ }
+
+ .table th,
+ .table td {
+     text-align: center;
+     vertical-align: middle;
+     white-space: nowrap;
+     padding: 10px;
+ }
+
+ .table th {
+     cursor: pointer;
+ }
+
+ .editable-cell input {
+     width: 100%;
+     background-color: #f0f0f0;
+     border: none;
+     text-align: center;
+ }
+
+ .editable-cell input:focus {
+     outline: none;
+ }
+
+ .actions-toolbar {
+     margin-bottom: 20px;
+ }
+
+ .actions-toolbar {
+     display: flex;
+     flex-wrap: wrap;
+ }
+
+ .actions-toolbar button {
+     margin-right: 10px;
+     margin-bottom: 10px;
+ }
+
+ .actions-toolbar i {
+     cursor: pointer;
+     font-size: 20px;
+     color: #333;
+ }
+
+ .actions-toolbar i:hover {
+     color: #007bff;
+ }
+
+ .btn i {
+     margin-right: 5px;
+ }
+
+ th[data-column="chemicalName"],
+ td[data-column="chemicalName"] {
+     min-width: 250px;
+ }
+
+ th[data-column="vendor"],
+ td[data-column="vendor"] {
+     min-width: 150px;
+ }
+
+ @media (max-width: 768px) {
+     .actions-toolbar {
+         flex-direction: column;
+     }
+
+     .actions-toolbar button {
+         width: 100%;
+         margin-right: 0;
+     }
+
+     .table th,
+     .table td {
+         font-size: 12px;
+         padding: 8px;
+     }
+ }

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chemical Supplies Table</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .table-container {
+        margin: 20px;
+      }
+      .table {
+        width: 100%; /* Set width to 100% for better layout */
+      }
+      .table th,
+      .table td {
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap; /* Prevent text wrapping */
+        padding: 10px; /* Add padding for better spacing */
+      }
+      .table th {
+        cursor: pointer;
+      }
+      .editable-cell input {
+        width: 100%;
+        background-color: #f0f0f0;
+        border: none;
+        text-align: center;
+      }
+      .editable-cell input:focus {
+        outline: none;
+      }
+      .actions-toolbar {
+        margin-bottom: 20px;
+      }
+      .actions-toolbar {
+        display: flex;
+        flex-wrap: wrap; /* Allow buttons to wrap */
+      }
+      .actions-toolbar button {
+        margin-right: 10px; /* Space between buttons */
+        margin-bottom: 10px; /* Space below buttons */
+      }
+      .actions-toolbar i {
+        cursor: pointer;
+        font-size: 20px;
+        color: #333;
+      }
+      .actions-toolbar i:hover {
+        color: #007bff;
+      }
+      .btn i {
+        margin-right: 5px;
+      }
+      /* Specific minimum widths for the columns */
+      th[data-column="chemicalName"],
+      td[data-column="chemicalName"] {
+        min-width: 250px; /* Adjust this width as needed */
+      }
+      th[data-column="vendor"],
+      td[data-column="vendor"] {
+        min-width: 150px; /* Adjust this width as needed */
+      }
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .actions-toolbar {
+          flex-direction: column; /* Stack buttons vertically on mobile */
+        }
+        .actions-toolbar button {
+          width: 100%; /* Full width buttons on mobile */
+          margin-right: 0; /* Remove right margin */
+        }
+        .table th,
+        .table td {
+          font-size: 12px; /* Smaller font for mobile */
+          padding: 8px; /* Reduced padding */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid mt-4">
+      <h2>Chemical Supplies</h2>
+
+      <!-- Toolbar with buttons -->
+      <div id="toolbar" class="actions-toolbar">
+        <button id="addRow" class="btn btn-primary">
+          <i class="fas fa-plus"></i> Add Row
+        </button>
+        <button id="moveUp" class="btn btn-secondary">
+          <i class="fas fa-arrow-up"></i> Move Up
+        </button>
+        <button id="moveDown" class="btn btn-secondary">
+          <i class="fas fa-arrow-down"></i> Move Down
+        </button>
+        <button id="deleteRow" class="btn btn-danger">
+          <i class="fas fa-trash-alt"></i> Delete Row
+        </button>
+        <button id="refreshTable" class="btn btn-warning">
+          <i class="fas fa-sync-alt"></i> Refresh Table
+        </button>
+        <button id="saveData" class="btn btn-success">
+          <i class="fas fa-save"></i> Save Data
+        </button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered" id="chemicalTable">
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th class="sortable" data-column="id">ID</th>
+              <th class="sortable" data-column="chemicalName">Chemical Name</th>
+              <th class="sortable" data-column="vendor">Vendor</th>
+              <th class="sortable" data-column="density">Density (g/m³)</th>
+              <th class="sortable" data-column="viscosity">Viscosity (m²/s)</th>
+              <th class="sortable" data-column="packaging">Packaging</th>
+              <th class="sortable" data-column="packSize">Pack Size</th>
+              <th class="sortable" data-column="unit">Unit</th>
+              <th class="sortable" data-column="quantity">Quantity</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
