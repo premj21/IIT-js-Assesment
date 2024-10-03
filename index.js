@@ -1,5 +1,5 @@
-// Initial Data (JSON Array)
-const originalDataJSON = `[
+// Initial Data (Original Data)
+const originalData = `[
   {
     "id": 1,
     "chemicalName": "Ammonium Persulfate",
@@ -9,7 +9,7 @@ const originalDataJSON = `[
     "packaging": "Bag",
     "packSize": "100.00",
     "unit": "kg",
-    "quantity": 6495.18,
+    "quantity": 6495.18
   },
   {
     "id": 2,
@@ -20,7 +20,7 @@ const originalDataJSON = `[
     "packaging": "Bag",
     "packSize": "100.00",
     "unit": "kg",
-    "quantity": 8751.9,
+    "quantity": 8751.9
   },
   {
     "id": 3,
@@ -31,7 +31,7 @@ const originalDataJSON = `[
     "packaging": "Barrel",
     "packSize": "75.00",
     "unit": "L",
-    "quantity": 5964.61,
+    "quantity": 5964.61
   },
   {
     "id": 4,
@@ -42,7 +42,7 @@ const originalDataJSON = `[
     "packaging": "Bag",
     "packSize": "105.00",
     "unit": "kg",
-    "quantity": 8183.73,
+    "quantity": 8183.73
   },
   {
     "id": 5,
@@ -53,7 +53,7 @@ const originalDataJSON = `[
     "packaging": "Bag",
     "packSize": "105.00",
     "unit": "kg",
-    "quantity": 4154.33,
+    "quantity": 4154.33
   },
   {
     "id": 6,
@@ -64,7 +64,7 @@ const originalDataJSON = `[
     "packaging": "N/A",
     "packSize": "N/A",
     "unit": "t",
-    "quantity": 6272.34,
+    "quantity": 6272.34
   },
   {
     "id": 7,
@@ -75,134 +75,195 @@ const originalDataJSON = `[
     "packaging": "Bag",
     "packSize": "250.00",
     "unit": "kg",
-    "quantity": 8749.54,
+    "quantity": 8749.54
   },
   {
     "id": 8,
-    "chemicalName": "Potassium Hydroxide",
-    "vendor": "Mitsubishi",
-    "density": 3062.8,
-    "viscosity": 22.5,
+    "chemicalName": "Sodium Bicarbonate",
+    "vendor": "BASF",
+    "density": 1682.00,
+    "viscosity": 9.1,
     "packaging": "Bag",
     "packSize": "50.00",
     "unit": "kg",
-    "quantity": 4785.12,
+    "quantity": 1230.00
   },
   {
     "id": 9,
-    "chemicalName": "Sodium Bicarbonate",
-    "vendor": "BASF",
-    "density": 1699.8,
-    "viscosity": 30.4,
-    "packaging": "Bag",
-    "packSize": "25.00",
+    "chemicalName": "Potassium Hydroxide",
+    "vendor": "Nouryon",
+    "density": 405.00,
+    "viscosity": 7.2,
+    "packaging": "Drum",
+    "packSize": "200.00",
     "unit": "kg",
-    "quantity": 6200.25,
+    "quantity": 1500.00
   },
   {
     "id": 10,
-    "chemicalName": "Sodium Hydroxide",
-    "vendor": "AkzoNobel",
-    "density": 1320.5,
-    "viscosity": 55.2,
-    "packaging": "Drum",
-    "packSize": "200.00",
+    "chemicalName": "Hydrochloric Acid",
+    "vendor": "Dow",
+    "density": 1200.00,
+    "viscosity": 1.0,
+    "packaging": "Barrel",
+    "packSize": "250.00",
     "unit": "L",
-    "quantity": 3540.67,
+    "quantity": 8000.00
   },
   {
     "id": 11,
-    "chemicalName": "Hydrochloric Acid",
-    "vendor": "Solvay",
-    "density": 1185.0,
-    "viscosity": 5.0,
-    "packaging": "Tank",
+    "chemicalName": "Sulfuric Acid",
+    "vendor": "Eastman",
+    "density": 1840.00,
+    "viscosity": 25.0,
+    "packaging": "Container",
     "packSize": "1000.00",
     "unit": "L",
-    "quantity": 2950.0,
+    "quantity": 5000.00
   },
   {
     "id": 12,
-    "chemicalName": "Sulfuric Acid",
-    "vendor": "Linde",
-    "density": 1840.0,
-    "viscosity": 27.0,
-    "packaging": "Container",
-    "packSize": "1000.00",
+    "chemicalName": "Acetic Acid",
+    "vendor": "SABIC",
+    "density": 1040.00,
+    "viscosity": 4.5,
+    "packaging": "Tank",
+    "packSize": "500.00",
     "unit": "L",
-    "quantity": 1500.0,
+    "quantity": 2500.00
   },
   {
     "id": 13,
-    "chemicalName": "Nitric Acid",
-    "vendor": "Yara",
-    "density": 1380.0,
-    "viscosity": 4.0,
-    "packaging": "Drum",
-    "packSize": "200.00",
+    "chemicalName": "Methanol",
+    "vendor": "Methanex",
+    "density": 791.00,
+    "viscosity": 0.5,
+    "packaging": "Cylinders",
+    "packSize": "100.00",
     "unit": "L",
-    "quantity": 400.0,
+    "quantity": 2000.00
   },
   {
     "id": 14,
-    "chemicalName": "Acetic Acid",
-    "vendor": "SABIC",
-    "density": 1045.0,
-    "viscosity": 1.5,
-    "packaging": "Barrel",
-    "packSize": "200.00",
+    "chemicalName": "Ethanol",
+    "vendor": "MGP Ingredients",
+    "density": 789.00,
+    "viscosity": 1.2,
+    "packaging": "Tank",
+    "packSize": "1000.00",
     "unit": "L",
-    "quantity": 1800.0,
+    "quantity": 10000.00
   },
   {
     "id": 15,
-    "chemicalName": "Formic Acid",
-    "vendor": "Eastman",
-    "density": 1100.0,
-    "viscosity": 1.0,
-    "packaging": "Container",
-    "packSize": "500.00",
+    "chemicalName": "Hexane",
+    "vendor": "Sinopec",
+    "density": 655.00,
+    "viscosity": 0.3,
+    "packaging": "Barrel",
+    "packSize": "200.00",
     "unit": "L",
-    "quantity": 2300.0,
-  },
-];`;
+    "quantity": 3000.00
+  }
+]`;
 
-// Convert JSON string to JavaScript object
-let chemicalData = JSON.parse(originalDataJSON);
-let sortDirection = 1; // 1 for ascending, -1 for descending
+let chemicalData = loadData();
+let sortDirection = 1;
+let selectedIndexes = new Set();
 
-// Populate Table Function
+// populate table
 function populateTable(data) {
   const tbody = document.querySelector("#chemicalTable tbody");
   tbody.innerHTML = ""; // Clear the table body
   data.forEach((row, index) => {
     const tr = document.createElement("tr");
-    tr.innerHTML = `<td><input type="checkbox" class="row-select" data-index="${index}"></td>
-            <td>${row.id}</td>
-            <td class="editable-cell"><input type="text" value="${row.chemicalName}" /></td>
-            <td class="editable-cell"><input type="text" value="${row.vendor}" /></td>
-            <td class="editable-cell"><input type="number" value="${row.density}" /></td>
-            <td class="editable-cell"><input type="number" value="${row.viscosity}" /></td>
-            <td class="editable-cell"><input type="text" value="${row.packaging}" /></td>
-            <td class="editable-cell"><input type="text" value="${row.packSize}" /></td>
-            <td class="editable-cell"><input type="text" value="${row.unit}" /></td>
-            <td class="editable-cell"><input type="number" value="${row.quantity}" /></td>
-        `;
+    tr.innerHTML = `
+      <td><input type="checkbox" class="row-select" data-index="${index}" ${
+      selectedIndexes.has(index) ? "checked" : ""
+    }></td>
+      <td>${row.id}</td>
+      <td class="editable-cell"><input type="text" value="${
+        row.chemicalName
+      }" data-index="${index}" data-field="chemicalName" /></td>
+      <td class="editable-cell"><input type="text" value="${
+        row.vendor
+      }" data-index="${index}" data-field="vendor" /></td>
+      <td class="editable-cell"><input type="number" value="${
+        row.density
+      }" data-index="${index}" data-field="density" /></td>
+      <td class="editable-cell"><input type="number" value="${
+        row.viscosity
+      }" data-index="${index}" data-field="viscosity" /></td>
+      <td class="editable-cell"><input type="text" value="${
+        row.packaging
+      }" data-index="${index}" data-field="packaging" /></td>
+      <td class="editable-cell"><input type="number" value="${
+        row.packSize
+      }" data-index="${index}" data-field="packSize" /></td>
+      <td class="editable-cell"><input type="text" value="${
+        row.unit
+      }" data-index="${index}" data-field="unit" /></td>
+      <td class="editable-cell"><input type="number" value="${
+        row.quantity
+      }" data-index="${index}" data-field="quantity" /></td>
+    `;
     tbody.appendChild(tr);
+  });
+
+  //chekckbox
+  document.querySelectorAll(".row-select").forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+      const index = parseInt(this.getAttribute("data-index"));
+      if (this.checked) {
+        selectedIndexes.add(index);
+      } else {
+        selectedIndexes.delete(index);
+      }
+    });
+  });
+
+  // populateTable(chemicalData);
+
+  // editable cell
+  document.querySelectorAll(".editable-cell input").forEach((input) => {
+    input.addEventListener("change", function () {
+      const index = parseInt(this.getAttribute("data-index"));
+      const field = this.getAttribute("data-field");
+      chemicalData[index][field] = this.value; // Update the data object when the value changes
+    });
   });
 }
 
-// Call populateTable initially to load the table
+// load Data from localStorage
+function loadData() {
+  const savedData = localStorage.getItem("chemicalData");
+  return savedData ? JSON.parse(savedData) : JSON.parse(originalData); // Parse JSON string to object
+}
+
+// Save data to localstorage
+function saveData() {
+  localStorage.setItem("chemicalData", JSON.stringify(chemicalData));
+  alert("Data saved successfully!");
+}
+
+// clear data from localStorage
+function clearSavedData() {
+  localStorage.removeItem("chemicalData");
+  chemicalData = [...originalData];
+  populateTable(chemicalData);
+  alert("Saved data cleared, table reset to original data!");
+}
+
 populateTable(chemicalData);
 
-// Refresh Table Functionality
+// refresh table
 document.querySelector("#refreshTable").addEventListener("click", () => {
-  // Reset the chemicalData array to its original state
-  chemicalData = JSON.parse(originalDataJSON); // Re-parse the original JSON data
+  chemicalData = loadData();
+  selectedIndexes.clear();
   populateTable(chemicalData);
 });
 
-// Add Row Functionality (with clear field on focus for new rows)
+// add row
 document.querySelector("#addRow").addEventListener("click", () => {
   const newRow = {
     id: chemicalData.length + 1,
@@ -217,16 +278,15 @@ document.querySelector("#addRow").addEventListener("click", () => {
   };
 
   chemicalData.push(newRow);
-  populateTable(chemicalData); // Re-populate the table with the new row
+  populateTable(chemicalData);
 
-  // Add event listener to clear the fields of the new row
-  const newIndex = chemicalData.length - 1; // Index of the newly added row
+  // clear new row fields on focus
+  const newIndex = chemicalData.length - 1;
   clearNewRowFieldsOnFocus(newIndex);
 });
 
-// Function to clear the input fields on focus for new rows
+// clear the input fields on focus
 function clearNewRowFieldsOnFocus(index) {
-  // Select all input fields for the new row and add 'focus' event listeners
   const newRowInputs = document.querySelectorAll(
     `tr:nth-child(${index + 1}) input`
   );
@@ -238,69 +298,78 @@ function clearNewRowFieldsOnFocus(index) {
         this.value === "New Vendor" ||
         this.value === "New Packaging" ||
         this.value === "0.00" ||
-        this.value === "0" // For number fields
+        this.value === "kg" ||
+        this.value === "t" ||
+        this.value === "0"
       ) {
-        this.value = ""; // Clear the input field
+        this.value = "";
       }
     });
   });
 }
-// Delete Selected Row Functionality
-document.querySelector("#deleteRow").addEventListener("click", () => {
-  const selectedRows = document.querySelectorAll(".row-select:checked");
-  selectedRows.forEach((row) => {
-    const index = row.getAttribute("data-index");
-    chemicalData.splice(index, 1); // Remove the selected row
+
+document.querySelector("#clearSelection").addEventListener("click", () => {
+  document.querySelectorAll(".row-select").forEach((checkbox) => {
+    checkbox.checked = false;
   });
-  populateTable(chemicalData); // Repopulate the table
+  selectedIndexes.clear();
 });
 
-// Move Row Up Functionality
+//delete selected row
+document.querySelector("#deleteRow").addEventListener("click", () => {
+  chemicalData = chemicalData.filter((_, index) => !selectedIndexes.has(index));
+  selectedIndexes.clear(); // Clear selections
+  populateTable(chemicalData);
+});
+
+// move up
 document.querySelector("#moveUp").addEventListener("click", () => {
-  const selectedRows = [...document.querySelectorAll(".row-select:checked")];
-  if (selectedRows.length) {
-    const indices = selectedRows.map((row) =>
-      parseInt(row.getAttribute("data-index"))
-    );
+  const selectedRows = Array.from(selectedIndexes).sort((a, b) => a - b);
 
-    // Check if any of the selected rows are already at the top
-    if (Math.min(...indices) === 0) return; // Stop if any selected row is at the top
-
-    // Move each selected row up
-    indices.forEach((index) => {
-      if (index > 0) {
-        [chemicalData[index - 1], chemicalData[index]] = [
-          chemicalData[index],
-          chemicalData[index - 1],
-        ];
-      }
-    });
-    populateTable(chemicalData);
+  if (selectedRows.length > 0 && selectedRows[0] === 0) {
+    return;
   }
+
+  selectedRows.forEach((rowIndex) => {
+    if (rowIndex > 0) {
+      [chemicalData[rowIndex - 1], chemicalData[rowIndex]] = [
+        chemicalData[rowIndex],
+        chemicalData[rowIndex - 1],
+      ];
+    }
+  });
+
+  const updatedSelectedIndexes = new Set();
+  selectedRows.forEach((rowIndex) => {
+    updatedSelectedIndexes.add(rowIndex - 1);
+  });
+  selectedIndexes = updatedSelectedIndexes;
+  populateTable(chemicalData);
 });
 
-// Move Row Down Functionality
+// move down
 document.querySelector("#moveDown").addEventListener("click", () => {
-  const selectedRows = [...document.querySelectorAll(".row-select:checked")];
-  if (selectedRows.length) {
-    const indices = selectedRows.map((row) =>
-      parseInt(row.getAttribute("data-index"))
-    );
+  const selectedRows = Array.from(selectedIndexes).sort((a, b) => b - a);
 
-    // Check if any of the selected rows are already at the bottom
-    if (Math.max(...indices) === chemicalData.length - 1) return; // Stop if any selected row is at the bottom
-
-    // Move each selected row down
-    indices.reverse().forEach((index) => {
-      if (index < chemicalData.length - 1) {
-        [chemicalData[index], chemicalData[index + 1]] = [
-          chemicalData[index + 1],
-          chemicalData[index],
-        ];
-      }
-    });
-    populateTable(chemicalData);
+  if (selectedRows.length > 0 && selectedRows[0] === chemicalData.length - 1) {
+    return;
   }
+
+  selectedRows.forEach((rowIndex) => {
+    if (rowIndex < chemicalData.length - 1) {
+      [chemicalData[rowIndex], chemicalData[rowIndex + 1]] = [
+        chemicalData[rowIndex + 1],
+        chemicalData[rowIndex],
+      ];
+    }
+  });
+
+  const updatedSelectedIndexes = new Set();
+  selectedRows.forEach((rowIndex) => {
+    updatedSelectedIndexes.add(rowIndex + 1);
+  });
+  selectedIndexes = updatedSelectedIndexes;
+  populateTable(chemicalData);
 });
 
 // Sort Table Functionality
@@ -323,23 +392,17 @@ function sortTableByColumn(column) {
     }
   });
 
-  // Toggle sorting direction for the next click
   sortDirection = sortDirection === 1 ? -1 : 1;
 
   populateTable(chemicalData);
 }
 
-// Save Data Functionality
+// save data
 document.querySelector("#saveData").addEventListener("click", () => {
-  localStorage.setItem("chemicalData", JSON.stringify(chemicalData));
-  alert("Data saved successfully!");
+  saveData();
 });
 
-// Load Data from Local Storage on Page Load
-window.addEventListener("load", () => {
-  const savedData = localStorage.getItem("chemicalData");
-  if (savedData) {
-    chemicalData = JSON.parse(savedData);
-    populateTable(chemicalData);
-  }
+// clear saved data
+document.querySelector("#clearData").addEventListener("click", () => {
+  clearSavedData();
 });
